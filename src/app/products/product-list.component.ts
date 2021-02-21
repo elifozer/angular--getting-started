@@ -5,8 +5,13 @@ import { Component } from '@angular/core'
     templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
+    // If we give it a default value, we do not need to specify its type
     pageTitle: string = "Product List";
-
+    imageWidth: number = 50;
+    imageMargin: number = 2;
+    showImage: boolean = false;
+    listFilter: string = "cart";
+    
     // Any time we don't know the specific type, we use any
     products: any[] = [
         {
@@ -30,4 +35,9 @@ export class ProductListComponent {
             "imageUrl": "assets/images/hammer.png"
         }
     ];
+    
+    // void is the return type
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
